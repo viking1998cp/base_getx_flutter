@@ -114,8 +114,8 @@ class ServiceCommon {
   BaseOptions _baseOptionsFromToken() {
     return BaseOptions(
         receiveDataWhenStatusError: true,
-        connectTimeout: 600000, // 60 seconds
-        receiveTimeout: 600000, // 60 seconds
+        connectTimeout: Duration(seconds: 60), // 60 seconds
+        receiveTimeout: Duration(seconds: 60), // 60 seconds
         headers: {
           'Content-type': 'application/json',
           'Accept': 'application/json',
@@ -123,7 +123,7 @@ class ServiceCommon {
   }
 
   Dio getApiClient() {
-    Dio().clear();
+    // Dio().close();
     Dio().close();
     Dio dio = new Dio(_baseOptionsFromToken());
     dio.interceptors.add(

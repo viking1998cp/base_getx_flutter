@@ -28,7 +28,8 @@ class ThemeConfig {
 
     return ThemeData(
       brightness: brightness,
-      buttonColor: primaryColor,
+      // buttonColor: primaryColor,
+      primaryColorLight: primaryColor,
       canvasColor: primaryBackgroundColor,
       cardColor: primaryBackgroundColor,
       dividerColor: divider,
@@ -48,16 +49,15 @@ class ThemeConfig {
         ),
         shadowColor: shadowColor,
       ),
-      backgroundColor: primaryBackgroundColor,
+      scaffoldBackgroundColor: primaryBackgroundColor,
       primaryColor: primaryColor,
       textSelectionTheme: TextSelectionThemeData(
         cursorColor: accentColor,
         selectionColor: accentColor,
         selectionHandleColor: accentColor,
       ),
-      toggleableActiveColor: accentColor,
       appBarTheme: AppBarTheme(
-        color: primaryColor,
+        backgroundColor: primaryColor,
         iconTheme: IconThemeData(
           color: secondTextColor,
         ),
@@ -66,15 +66,16 @@ class ThemeConfig {
         color: secondTextColor,
         size: 16,
       ),
-      errorColor: error,
+      
+     
       buttonTheme: ButtonThemeData(
         textTheme: ButtonTextTheme.primary,
         colorScheme: ColorScheme(
           brightness: brightness,
           primary: primaryColor,
-          primaryVariant: accentColor,
+          primaryContainer: accentColor,
           secondary: accentColor,
-          secondaryVariant: accentColor,
+          secondaryContainer: accentColor,
           surface: primaryBackgroundColor,
           background: primaryColor,
           error: error,
@@ -83,6 +84,15 @@ class ThemeConfig {
           onSurface: primaryTextColor,
           onBackground: primaryTextColor,
           onError: primaryTextColor,
+          outline: primaryBorderColor,
+          surfaceVariant: primaryBackgroundColor,
+          onSurfaceVariant: primaryTextColor,
+          inverseSurface: primaryBackgroundColor,
+          onInverseSurface: primaryTextColor,
+          inversePrimary: accentColor,
+          shadow: shadowColor,
+          scrim: Colors.black.withOpacity(0.5),
+          surfaceTint: primaryColor,
         ),
         padding: const EdgeInsets.all(16),
       ),
@@ -107,86 +117,92 @@ class ThemeConfig {
       fontFamily: 'Mulish',
       unselectedWidgetColor: Colors.grey,
       textTheme: TextTheme(
-        /// headline1 Color: primaryTextColor -> Black Gray (#333333)
-        headline1: baseTextTheme.headline1!.copyWith(
+        /// displayLarge (formerly headline1)
+        displayLarge: baseTextTheme.displayLarge!.copyWith(
           color: primaryTextColor,
           fontSize: 20,
           fontWeight: FontWeight.bold,
         ),
 
-        /// headline2 Color: secondTextColor -> White
-        headline2: baseTextTheme.headline2!.copyWith(
+        /// displayMedium (formerly headline2)
+        displayMedium: baseTextTheme.displayMedium!.copyWith(
           color: secondTextColor,
           fontSize: 20,
           fontWeight: FontWeight.bold,
         ),
 
-        /// headline3 Color: thirdTextColor -> Black (#000000)
-        headline3: baseTextTheme.headline3!.copyWith(
+        /// displaySmall (formerly headline3)
+        displaySmall: baseTextTheme.displaySmall!.copyWith(
           color: thirdTextColor,
           fontSize: 20,
           fontWeight: FontWeight.bold,
         ),
 
-        /// headline4 Color: fourthTextColor -> Green
-        headline4: baseTextTheme.headline4!.copyWith(
+        /// headlineMedium (formerly headline4)
+        headlineMedium: baseTextTheme.headlineMedium!.copyWith(
           color: fourthTextColor,
           fontSize: 20,
           fontWeight: FontWeight.bold,
         ),
 
-        /// headline5 Color: fifthTextColor -> Gray
-        headline5: baseTextTheme.headline5!.copyWith(
+        /// headlineSmall (formerly headline5)
+        headlineSmall: baseTextTheme.headlineSmall!.copyWith(
           color: fifthTextColor,
           fontSize: 20,
           fontWeight: FontWeight.bold,
         ),
 
-        /// headline6 Color: primaryTextColor -> Black Gray (#333333)
-        headline6: baseTextTheme.headline6!.copyWith(
+        /// titleLarge (formerly headline6)
+        titleLarge: baseTextTheme.titleLarge!.copyWith(
           color: primaryTextColor,
           fontSize: 18,
           fontWeight: FontWeight.bold,
         ),
 
-        /// bodyText1 Color: primaryTextColor -> Black Gray (#333333)
-        bodyText1: baseTextTheme.bodyText1!.copyWith(
+        /// bodyLarge (formerly bodyText1)
+        bodyLarge: baseTextTheme.bodyLarge!.copyWith(
           color: primaryTextColor,
           fontSize: 14,
           fontWeight: FontWeight.normal,
         ),
 
-        /// bodyText2 Color: secondTextColor -> White
-        bodyText2: baseTextTheme.bodyText2!.copyWith(
+        /// bodyMedium (formerly bodyText2)
+        bodyMedium: baseTextTheme.bodyMedium!.copyWith(
           color: primaryTextColor,
           fontSize: 14,
           fontWeight: FontWeight.normal,
         ),
 
-        /// subtitle1 Color: primaryTextColor -> Black Gray (#333333)
-        subtitle1: baseTextTheme.subtitle1!.copyWith(
+        /// titleMedium (formerly subtitle1)
+        titleMedium: baseTextTheme.titleMedium!.copyWith(
           color: primaryTextColor,
           fontSize: 12,
           fontWeight: FontWeight.bold,
         ),
 
-        /// subtitle2 Color: fifthTextColor -> Gray
-        subtitle2: baseTextTheme.subtitle2!.copyWith(
+        /// titleSmall (formerly subtitle2)
+        titleSmall: baseTextTheme.titleSmall!.copyWith(
           color: fifthTextColor,
           fontSize: 12,
           fontWeight: FontWeight.bold,
         ),
-        button: baseTextTheme.button!.copyWith(
+
+        /// labelLarge (formerly button)
+        labelLarge: baseTextTheme.labelLarge!.copyWith(
           color: secondTextColor,
           fontSize: 14,
           fontWeight: FontWeight.bold,
         ),
-        caption: baseTextTheme.caption!.copyWith(
+
+        /// bodySmall (formerly caption)
+        bodySmall: baseTextTheme.bodySmall!.copyWith(
           color: primaryTextColor,
           fontSize: 11,
           fontWeight: FontWeight.w300,
         ),
-        overline: baseTextTheme.overline!.copyWith(
+
+        /// labelSmall (formerly overline)
+        labelSmall: baseTextTheme.labelSmall!.copyWith(
           color: primaryTextColor,
           fontSize: 11,
           fontWeight: FontWeight.w500,
